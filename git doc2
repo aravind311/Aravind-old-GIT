@@ -345,3 +345,119 @@ A fork is a rough copy of a repository. Forking a repository allows you to freel
 Fork vs. Clone
 Both commands are used to create another copy of the repository. 
 But the significant difference is that the fork is used to create a server-side copy, and clone is used to create a local copy of the repository.
+
+
+Git Repository
+Initializing a Repository
+$ git init  
+$ git status  
+$ git add <filename>
+$ git commit -m "Commit message."  
+
+Cloning an Existing Repository
+$ git clone <Repository URL>  
+
+
+Git Index
+Git Index
+$ git status  
+
+
+Git Head
+
+Git Show Head
+will show the location of the Head.
+$ git show HEAD  
+
+
+Git Origin Master
+
+
+Git Remote
+the term remote is concerned with the remote repository
+Git Remote
+ you want to see the original existence of your cloned repository
+$ git remote  
+
+Git remote -v:
+Git remote -v:
+Git remote supports a specific option -v to show the URLs that Git has stored as a short name
+$ git remote -v  
+Or
+$ git remote --verbose 
+
+Git Remote Add
+to add remote as a short name, follow the below command:
+Syntax:
+$ git remote add <short name><remote URL>  
+
+Fetching and Pulling Remote BranchGit Remove Remote
+To fetch the data from your remote projects, run the below command:
+$ git fetch <remote>  
+
+To clone the remote repository from your remote projects, run the below command:
+$ git clone<remote>  
+
+To pull the repository, run the below command:
+$ git pull <remote>  
+
+Pushing to Remote Branch
+$ git push <remote><branch>  
+
+To update the main branch of the project, use the below command:
+$ git push origin master  
+
+Git Remove Remote
+$ git remote rm <destination>  
+Or
+$ git remote remove <destination> 
+
+To check the remote verbosely, perform the below command:
+$ git remote -v  
+
+Git Remote Rename
+$ git remote rename <old name><new name> 
+
+Git Show Remote
+$ git remote show <remote>  
+
+Git Change Remote (Changing a Remote's URL)
+Git Remote Set:
+$ git remote set-url <remote name><newURL>
+
+To check the latest URL, perform the below command:
+$ git remote -v  
+
+
+Git Branch
+Git Master Branch
+
+Create Branch
+$ git branch  <branch name>
+
+List Branch
+$ git branch --list  
+or
+$ git branch  
+
+Delete Branch
+$ git branch -d<branch name> 
+$ git branch -D <branch name>  
+
+Delete a Remote Branch
+$ git push origin -delete <branch name>  
+
+Switch Branch
+$ git checkout<branch name>  
+
+Switch to master branch
+$ git branch -m master  
+
+Rename Branch
+$ git branch -m <old branch name><new branch name>  
+
+Merge Branch
+$ git merge <branch name>  
+
+
+
