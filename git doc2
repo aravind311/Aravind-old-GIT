@@ -1,0 +1,347 @@
+Git commands
+
+
+1. Git configuration
+Git config
+Get and set configuration variables that control all facets of how Git looks and operates.
+Set the name:
+$ git config --global user.name "User name"
+Set the email:
+$ git config --global user.email "himanshudubey481@gmail.com"
+Set the default editor:
+$ git config --global core.editor Vim
+Check the setting:
+$ git config -list
+Git alias
+Set up an alias for each command:
+$ git config --global alias.co checkout
+$ git config --global alias.br branch
+$ git config --global alias.ci commit
+$ git config --global alias.st status
+
+
+2. Starting a project
+Git init
+Create a local repository:
+$ git init
+Git clone
+Make a local copy of the server repository.
+$ git clone
+
+
+3. Local changes
+Git add
+Add a file to staging (Index) area:
+$ git add Filename
+Add all files of a repo to staging (Index) area:
+$ git add*
+Git commit
+Record or snapshots the file permanently in the version history with a message.
+$ git commit -m " Commit Message"
+
+
+4. Track changes
+Git diff
+Track the changes that have not been staged: $ git diff
+Track the changes that have staged but not committed:
+$ git diff --staged
+Track the changes after committing a file:
+$ git diff HEAD
+Track the changes between two commits:
+$ git diff Git Diff Branches:
+$ git diff < branch 2>
+Git status
+Display the state of the working directory and the staging area.
+$ git status
+Git show Shows objects:
+$ git show
+
+
+5. Commit History
+Git log
+Display the most recent commits and the status of the head:
+$ git log
+Display the output as one commit per line:
+$ git log -oneline
+Displays the files that have been modified:
+$ git log -stat
+Display the modified files with location:
+$ git log -p
+Git blame
+Display the modification on each line of a file:
+$ git blame <file name>
+
+
+6. Ignoring files
+.gitignore
+Specify intentionally untracked files that Git should ignore. Create .gitignore:
+$ touch .gitignore List the ignored files:
+$ git ls-files -i --exclude-standard
+
+
+7. Branching
+Git branch Create branch:
+$ git branch List Branch:
+$ git branch --list Delete a Branch:
+$ git branch -d Delete a remote Branch:
+$ git push origin -delete Rename Branch:
+$ git branch -m
+Git checkout
+Switch between branches in a repository.
+Switch to a particular branch:
+$ git checkout
+Create a new branch and switch to it:
+$ git checkout -b Checkout a Remote branch:
+$ git checkout
+Git stash
+Switch branches without committing the current branch. Stash current work:
+$ git stash
+Saving stashes with a message:
+$ git stash save ""
+Check the stored stashes:
+$ git stash list
+Re-apply the changes that you just stashed:
+$ git stash apply
+Track the stashes and their changes:
+$ git stash show
+Re-apply the previous commits:
+$ git stash pop
+Delete a most recent stash from the queue:
+$ git stash drop
+Delete all the available stashes at once:
+$ git stash clear
+Stash work on a separate branch:
+$ git stash branch
+Git cherry pic
+Apply the changes introduced by some existing commit:
+$ git cherry-pick
+
+
+8. Merging
+Git merge
+Merge the branches:
+$ git merge
+Merge the specified commit to currently active branch:
+$ git merge
+Git rebase
+Apply a sequence of commits from distinct branches into a final commit.
+$ git rebase
+Continue the rebasing process:
+$ git rebase -continue Abort the rebasing process:
+$ git rebase --skip
+Git interactive rebase
+Allow various operations like edit, rewrite, reorder, and more on existing commits.
+$ git rebase -i
+
+
+9. Remote
+Git remote
+Check the configuration of the remote server:
+$ git remote -v
+Add a remote for the repository:
+$ git remote add Fetch the data from the remote server:
+$ git fetch
+Remove a remote connection from the repository:
+$ git remote rm
+Rename remote server:
+$ git remote rename
+Show additional information about a particular remote:
+$ git remote show
+Change remote:
+$ git remote set-url
+Git origin master
+Push data to the remote server:
+$ git push origin master Pull data from remote server:
+$ git pull origin master
+
+
+10. Pushing Updates
+Git push
+Transfer the commits from your local repository to a remote server. Push data to the remote server:
+$ git push origin master Force push data:
+$ git push -f
+Delete a remote branch by push command:
+$ git push origin -delete edited
+
+
+11. Pulling updates
+Git pull
+Pull the data from the server:
+$ git pull origin master
+Pull a remote branch:
+$ git pull
+Git fetch
+Download branches and tags from one or more repositories. Fetch the remote repository:
+$ git fetch< repository Url> Fetch a specific branch:
+$ git fetch
+Fetch all the branches simultaneously:
+$ git fetch -all
+Synchronize the local repository:
+$ git fetch origin
+
+
+12. Undo changes
+Git revert
+Undo the changes:
+$ git revert
+Revert a particular commit:
+$ git revert
+Git reset
+Reset the changes:
+$ git reset -hard
+$ git reset -soft:
+$ git reset --mixed
+
+
+13. Removing files
+Git rm
+Remove the files from the working tree and from the index:
+$ git rm <file Name>
+Remove files from the Git But keep the files in your local repository:
+$ git rm --cached
+============================================================================================================================================
+
+
+Git Init
+Create a Repository for a Blank (New) Project:
+$ git init  
+To create a file, run the cat or touch command as follows:
+$ touch <file Name>  
+To add files to the repository, run the git add command as follows:
+$ git add <file name>  
+Create a Repository for an existing project
+$ git init
+We can list all the untracked files by git status command.
+$ git status    
+Create a Repository and Directory Together
+$ git init NewDirectory
+
+Git Add
+Git add files
+$ git add <File name> 
+NewDirectory
+$ touch newfile.txt
+$ git status  
+$ git add newfile.txt
+
+Git Add All
+This command will stage all the files at a time. It will run as follows:
+$ git add -A  
+Or
+$ git add .  
+$ git add newfile3.txt  
+
+Add all New and Updated Files Only:
+$ git add --ignore-removal . 
+
+Add all Modified and Deleted Files
+$ git add -u  
+
+Add Files by Wildcard
+$ git add *.java  
+
+Git Undo Add
+$ git reset <filename>  
+
+
+Git Commit
+We can specify our commit message in this text editor. It will run as follows:
+$ git commit 
+
+Git commit -a
+$ git commit -a  
+
+command will make a commit with the given commit message
+$ git commit -m "Commit message." 
+
+immediately make a commit for already staged files with a commit message
+$ git commit -am "Commit message." 
+
+Git Commit Amend (Change commit message)
+we have committed a wrong commit message, then this feature is a savage option for us.
+The below command will prompt the default text editor and allow us to edit the commit message.
+$ git commit -amend  
+
+Git Clone
+Use the git clone command with repository URL to make a copy of the remote repository. See the below command:
+$ git clone https://github.com/ImDwivedi1/Git-Example.git  
+
+Cloning a Repository into a Specific Local Folder
+Git allows cloning the repository into a specific directory without switching to that particular directory.
+$ git clone https://github.com/ImDwivedi1/Git-Example.git "new folder(2)"  
+
+Git Clone Branch
+Git allows making a copy of only a particular branch from a repository
+$ git clone -b <Branch name><Repository URL>  
+See the below command:
+$ git clone -b master https://github.com/ImDwivedi1/Git-Example.git "new folder(2)" 
+In the given output, only the master branch is cloned from the principal repository Git-Example.
+
+Git Stash
+git stash command enables you to switch branches without committing the current branch.
+$ git stash  
+
+Git Stash Save (Saving Stashes with the message):
+$ git stash save "<Stashing Message>"
+
+Git Stash List (Check the Stored Stashes)
+$ git stash list  
+
+Git Stash Apply
+re-apply the changes that you just stashed by using the git stash command
+$ git stash apply  
+git stash apply <stash id>
+
+Git Stash Changes
+We can track the stashes and their changes
+$ git stash show
+
+$ git stash show -p 
+-p stands for the partial stash
+
+Git Stash Pop (Reapplying Stashed Changes)
+Git allows the user to re-apply the previous commits by using git stash pop command
+$ git stash pop
+
+Git Stash Drop (Unstash)
+git stash drop command is used to delete a stash from the queue.
+$ git stash drop
+ 
+ delete a particular stash from the available stashes, pass the stash id in stash drop command
+ $ git stash drop <stash id> 
+ ex $ git stash drop stash@{1}  
+ 
+ Git Stash Clear
+ allows deleting all the available stashes at once
+ $ git stash clear  
+ 
+ Git Stash Branch
+ allows the user to stash work on a separate branch to avoid conflicts
+ $ git stash branch <Branch Name>  
+ 
+ 
+ Git Ignore
+ untracked files that Git should ignore. It doesn't affect the Files that already tracked by Git
+ 
+ How to Ignore Files Manually
+ $ touch .gitignore  
+Or
+$ cat .gitignore  
+$ git add .gitignore  
+$ git commit -m "ignored directory created."  
+
+Global .gitignore:.
+$ git config --global core.excludesfile ~/.gitignore_global
+
+How to List the Ignored Files?
+$ git ls-files -i --exclude-standard  
+Or
+$ git ls-files --ignore --exclude-standard 
+I option stands for ignore and --exclude-standard is specifying the exclude pattern
+
+Git Fork
+A fork is a rough copy of a repository. Forking a repository allows you to freely test and debug with changes without affecting the original project
+
+Fork vs. Clone
+Both commands are used to create another copy of the repository. 
+But the significant difference is that the fork is used to create a server-side copy, and clone is used to create a local copy of the repository.
